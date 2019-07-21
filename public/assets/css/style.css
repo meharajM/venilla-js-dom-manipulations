@@ -1,0 +1,91 @@
+#book-container{
+    width: 1140px;
+    margin: 0 auto;
+}
+.hidden{
+    display: none;
+}
+.chapter{
+    border: 0.5px solid #efefef;
+    cursor: pointer;
+}
+
+.chapter-title{
+    height: 32px;
+    line-height: 32px;
+    padding-left: 16px;
+}
+.chapter-title:hover {
+    color: white;
+    background-color: #07d;
+}
+.lesson {
+    height: 32px;
+    line-height: 32px;
+}
+ul.chapter-details {
+    list-style: none;
+  overflow: hidden;
+  
+}
+
+ul.chapter-details li::before{
+    content: '';
+    
+    width: 12px;
+    height: 12px;
+    margin-right: 8px;
+   
+}
+.legends{
+    text-align: right;
+
+}
+.legends span{
+    
+    margin-left: 16px;
+}
+.legends span::after{
+    content: ' ';
+    width: 2px;
+    margin: 4px;
+    
+    
+}
+ul.chapter-details li.lesson.not_started::before, .not_started::after {
+    border: 1px solid red; 
+    background: red;
+}
+ul.chapter-details li.lesson.in_progress::before, .in_progress::after {
+    border: 1px solid #07d; 
+    background: #07d;
+}
+ul.chapter-details li.lesson.complete::before, .complete::after {
+    border: 1px solid green; 
+    background: green;
+}
+.students, .completed-count{
+    margin-left: 40px;
+}
+
+@keyframes spinner {
+    to {transform: rotate(360deg);}
+  }
+  .loading{
+      margin-left: 16px;
+      margin-top: 8px;
+  }
+  .loading:before {
+    content: '';
+    box-sizing: border-box;
+    position: absolute;
+    
+    width: 20px;
+    height: 20px;
+    
+    border-radius: 50%;
+    border: 1px solid #ccc;
+    border-top-color: #07d;
+    animation: spinner .6s linear infinite;
+  }
+  
